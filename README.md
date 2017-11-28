@@ -4,7 +4,7 @@ KiriKiri Development Environment（以下長いのでKKDEと略す）は吉里�
 
 ## リリースファイル
 
-* [https://github.com/mryp/kkde/raw/master/_release/kkde_200a4.zip](v2.0.0α4 ダウンロード)
+* [v2.0.0α4 ダウンロード](https://github.com/mryp/kkde/raw/master/_release/kkde_200a4.zip)
 
 ## 著作権・謝辞
 
