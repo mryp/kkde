@@ -1,0 +1,722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DFFE6518-04BA-4AD1-BA3E-3533B78F75C3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>kkde</RootNamespace>
+    <AssemblyName>kkde</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="Yanesdk, Version=1.5.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\sample\yanesdkdotnet200712170554v156\bin\Debug\Yanesdk.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="debug\ExecLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="debug\ExecLogForm.Designer.cs">
+      <DependentUpon>ExecLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="debug\KrkrProcess.cs" />
+    <Compile Include="debug\LabelExecManager.cs" />
+    <Compile Include="debug\ReleaseProcess.cs" />
+    <Compile Include="editor\CompletionAction.cs" />
+    <Compile Include="editor\CompletionImageList.cs" />
+    <Compile Include="editor\HelpReferenceAction.cs" />
+    <Compile Include="editor\IEditorDocContent.cs" />
+    <Compile Include="editor\KagFoldingInfo.cs" />
+    <Compile Include="editor\ParserFoldingStrategy.cs" />
+    <Compile Include="editor\ProjectBookmarkTable.cs" />
+    <Compile Include="editor\ProjectStringTable.cs" />
+    <Compile Include="editor\TextEncoding.cs" />
+    <Compile Include="help\HelpReferenceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="help\HelpReferenceDialog.Designer.cs">
+      <DependentUpon>HelpReferenceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="help\HelpReferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="help\HelpReferenceForm.Designer.cs">
+      <DependentUpon>HelpReferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="help\HelpReferencePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="help\HelpReferencePanel.Designer.cs">
+      <DependentUpon>HelpReferencePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="help\KkdeEnvInfo.cs" />
+    <Compile Include="kagex\ActionHandlerManager.cs" />
+    <Compile Include="kagex\ActionPropertySelectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kagex\ActionPropertySelectDialog.Designer.cs">
+      <DependentUpon>ActionPropertySelectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kagex\CosActionInfo.cs" />
+    <Compile Include="kagex\FallActionInfo.cs" />
+    <Compile Include="kagex\IActionInfo.cs" />
+    <Compile Include="kagex\IntegerActionInfo.cs" />
+    <Compile Include="kagex\LoopMoveActionInfo.cs" />
+    <Compile Include="kagex\MoveActionInfo.cs" />
+    <Compile Include="kagex\NullActionInfo.cs" />
+    <Compile Include="kagex\ActionProperty.cs" />
+    <Compile Include="kagex\BaseWorldExAttrType.cs" />
+    <Compile Include="kagex\CharWorldExAttrType.cs" />
+    <Compile Include="kagex\EventWorldExAttrType.cs" />
+    <Compile Include="kagex\BaseActionInfo.cs" />
+    <Compile Include="kagex\PropertyGridWorldExLevelConverter.cs" />
+    <Compile Include="kagex\PropertyGridAccelConverter.cs" />
+    <Compile Include="kagex\PropertyGridCompModeConverter.cs" />
+    <Compile Include="kagex\KagexPreview.cs" />
+    <Compile Include="debug\MessageManager.cs" />
+    <Compile Include="kagex\PropertyGridOnOffConverter.cs" />
+    <Compile Include="kagex\PropertyGridWorldExActionConverter.cs" />
+    <Compile Include="kagex\PropertyGridWorldExPosConverter.cs" />
+    <Compile Include="kagex\PropertyGridWorldExStimeConverter.cs" />
+    <Compile Include="kagex\PropertyGridWorldExTransConverter.cs" />
+    <Compile Include="kagex\RandomActionInfo.cs" />
+    <Compile Include="kagex\SinActionInfo.cs" />
+    <Compile Include="kagex\SquareActionInfo.cs" />
+    <Compile Include="kagex\StageWorldExAttrType.cs" />
+    <Compile Include="kagex\TriangleActionInfo.cs" />
+    <Compile Include="kagex\WorldExActionEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kagex\WorldExActionEditorForm.Designer.cs">
+      <DependentUpon>WorldExActionEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kagex\WorldExCharSelectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kagex\WorldExCharSelectDialog.Designer.cs">
+      <DependentUpon>WorldExCharSelectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kagex\WorldExCharTreeNode.cs" />
+    <Compile Include="kagex\WorldExObjectSelectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kagex\WorldExObjectSelectDialog.Designer.cs">
+      <DependentUpon>WorldExObjectSelectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kagex\WorldExPotision.cs" />
+    <Compile Include="kagex\WorldExPotisionObjectConverter.cs" />
+    <Compile Include="kagex\WorldExPreviewAttr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kagex\WorldExPreviewAttr.Designer.cs">
+      <DependentUpon>WorldExPreviewAttr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kagex\WorldExRelativePotision.cs" />
+    <Compile Include="kagex\WorldExRelativePotisionObjectConverter.cs" />
+    <Compile Include="kagex\WorldExViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kagex\WorldExViewForm.Designer.cs">
+      <DependentUpon>WorldExViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kag\image\ImageViewerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kag\image\ImageViewerForm.Designer.cs">
+      <DependentUpon>ImageViewerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kag\label\KagLabelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kag\label\KagLabelForm.Designer.cs">
+      <DependentUpon>KagLabelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kag\sound\ISoundFile.cs" />
+    <Compile Include="kag\sound\MciSoundFile.cs" />
+    <Compile Include="kag\sound\MidiSoundFile.cs" />
+    <Compile Include="kag\sound\OggSoundFile.cs" />
+    <Compile Include="kag\sound\SoundPlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kag\sound\SoundPlayerForm.Designer.cs">
+      <DependentUpon>SoundPlayerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kag\sound\WaveSoundFile.cs" />
+    <Compile Include="kag\sound\Win32MciApi.cs" />
+    <Compile Include="kag\sound\Win32Memory.cs" />
+    <Compile Include="kag\sound\Win32PcmApi.cs" />
+    <Compile Include="option\EditorOption.cs" />
+    <Compile Include="global\FormManager.cs" />
+    <Compile Include="global\SyntaxModesFile.cs" />
+    <Compile Include="option\BaseColorType.cs" />
+    <Compile Include="option\EnvOptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="option\EnvOptionForm.Designer.cs">
+      <DependentUpon>EnvOptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="option\KagColorType.cs" />
+    <Compile Include="option\KagCompletionListInputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="option\KagCompletionListInputBox.Designer.cs">
+      <DependentUpon>KagCompletionListInputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="option\KagCompletionOption.cs" />
+    <Compile Include="option\TjsColorType.cs" />
+    <Compile Include="option\ToolBarPos.cs" />
+    <Compile Include="option\TypeColorFile.cs" />
+    <Compile Include="option\TypeOptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="option\TypeOptionForm.Designer.cs">
+      <DependentUpon>TypeOptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editor\EditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editor\EditorForm.Designer.cs">
+      <DependentUpon>EditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editor\EditorManager.cs" />
+    <Compile Include="editor\HistoryTable.cs" />
+    <Compile Include="editor\TextEditorEx.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="editor\TextEditorEx.Designer.cs">
+      <DependentUpon>TextEditorEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editor\TxtEnc.cs" />
+    <Compile Include="option\ConstEnvOption.cs" />
+    <Compile Include="option\EnvOption.cs" />
+    <Compile Include="global\GlobalStatus.cs" />
+    <Compile Include="help\VersionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="help\VersionForm.Designer.cs">
+      <DependentUpon>VersionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="parse\AbstractKagLexer.cs" />
+    <Compile Include="parse\AbstractLexer.cs" />
+    <Compile Include="parse\complate\AbstractCompletionDataProvider.cs" />
+    <Compile Include="parse\complate\KagCompletionAttrValue.cs" />
+    <Compile Include="parse\complate\KagCompletionData.cs" />
+    <Compile Include="parse\complate\KagCompletionDataProvider.cs" />
+    <Compile Include="parse\complate\TjsCompletionData.cs" />
+    <Compile Include="parse\complate\TjsCompletionDataProvider.cs" />
+    <Compile Include="parse\CompletionUnit.cs" />
+    <Compile Include="parse\CompletionUnitManager.cs" />
+    <Compile Include="parse\ILexer.cs" />
+    <Compile Include="parse\IParser.cs" />
+    <Compile Include="parse\KagCompletionUnit.cs" />
+    <Compile Include="parse\kagex\KagexCompletionUnit.cs" />
+    <Compile Include="parse\kagex\KagexEnvinitLexer.cs" />
+    <Compile Include="parse\kagex\KagexEnvinitNode.cs" />
+    <Compile Include="parse\kagex\KagexEnvinitParser.cs" />
+    <Compile Include="parse\KagLabelItem.cs" />
+    <Compile Include="parse\KagLexer.cs" />
+    <Compile Include="parse\KagMacro.cs" />
+    <Compile Include="parse\KagMacroAttr.cs" />
+    <Compile Include="parse\KagMacroLexer.cs" />
+    <Compile Include="parse\KagParser.cs" />
+    <Compile Include="parse\complate\KagTagKindInfo.cs" />
+    <Compile Include="parse\KagTokens.cs" />
+    <Compile Include="parse\KagToolTip.cs" />
+    <Compile Include="parse\KagUtility.cs" />
+    <Compile Include="parse\ParserService.cs" />
+    <Compile Include="parse\RegionItem.cs" />
+    <Compile Include="parse\TjsBaseLexer.cs" />
+    <Compile Include="parse\TjsCompletionUnit.cs" />
+    <Compile Include="parse\Token.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="project\AddFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="project\AddFileForm.Designer.cs">
+      <DependentUpon>AddFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="project\FilePropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="project\FilePropertyForm.Designer.cs">
+      <DependentUpon>FilePropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="project\FileType.cs" />
+    <Compile Include="project\ImportProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="project\ImportProjectForm.Designer.cs">
+      <DependentUpon>ImportProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="project\NewCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="project\NewCreateForm.Designer.cs">
+      <DependentUpon>NewCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="project\ProjectFile.cs" />
+    <Compile Include="project\ProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="project\ProjectForm.Designer.cs">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="project\ProjectPropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="project\ProjectPropertyForm.Designer.cs">
+      <DependentUpon>ProjectPropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="debug\ExecLogForm.resx">
+      <DependentUpon>ExecLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="help\HelpReferenceDialog.resx">
+      <DependentUpon>HelpReferenceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="help\HelpReferenceForm.resx">
+      <DependentUpon>HelpReferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="help\HelpReferencePanel.resx">
+      <DependentUpon>HelpReferencePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kagex\ActionPropertySelectDialog.resx">
+      <DependentUpon>ActionPropertySelectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kagex\WorldExActionEditorForm.resx">
+      <DependentUpon>WorldExActionEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kagex\WorldExCharSelectDialog.resx">
+      <DependentUpon>WorldExCharSelectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kagex\WorldExObjectSelectDialog.resx">
+      <DependentUpon>WorldExObjectSelectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kagex\WorldExPreviewAttr.resx">
+      <DependentUpon>WorldExPreviewAttr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kagex\WorldExViewForm.resx">
+      <DependentUpon>WorldExViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kag\image\ImageViewerForm.resx">
+      <DependentUpon>ImageViewerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kag\label\KagLabelForm.resx">
+      <DependentUpon>KagLabelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kag\sound\SoundPlayerForm.resx">
+      <DependentUpon>SoundPlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="option\EnvOptionForm.resx">
+      <DependentUpon>EnvOptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="option\KagCompletionListInputBox.resx">
+      <DependentUpon>KagCompletionListInputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="option\TypeOptionForm.resx">
+      <DependentUpon>TypeOptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editor\EditorForm.resx">
+      <DependentUpon>EditorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editor\TextEditorEx.resx">
+      <DependentUpon>TextEditorEx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="help\VersionForm.resx">
+      <DependentUpon>VersionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="project\AddFileForm.resx">
+      <DependentUpon>AddFileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="project\FilePropertyForm.resx">
+      <DependentUpon>FilePropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="project\ImportProjectForm.resx">
+      <DependentUpon>ImportProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="project\NewCreateForm.resx">
+      <DependentUpon>NewCreateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="project\ProjectForm.resx">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="project\ProjectPropertyForm.resx">
+      <DependentUpon>ProjectPropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screen\ScreenMakerForm.resx">
+      <DependentUpon>ScreenMakerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screen\ScreenPanel.resx">
+      <DependentUpon>ScreenPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screen\ScreenPropertyForm.resx">
+      <DependentUpon>ScreenPropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screen\ScreenToolForm.resx">
+      <DependentUpon>ScreenToolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="search\BookmarkListForm.resx">
+      <DependentUpon>BookmarkListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="search\GrepOptionForm.resx">
+      <DependentUpon>GrepOptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="search\JumpOptionForm.resx">
+      <DependentUpon>JumpOptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="search\ReplaceAllForm.resx">
+      <DependentUpon>ReplaceAllForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="search\ReplaceOptionForm.resx">
+      <DependentUpon>ReplaceOptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="search\SearchOptionForm.resx">
+      <DependentUpon>SearchOptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="search\SearchResultForm.resx">
+      <DependentUpon>SearchResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taginsert\BaseInsertForm.resx">
+      <DependentUpon>BaseInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taginsert\message\ClearInsertForm.resx">
+      <DependentUpon>ClearInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taginsert\message\ClickWaitInsertForm.resx">
+      <DependentUpon>ClickWaitInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taginsert\message\FontInsertForm.resx">
+      <DependentUpon>FontInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="taginsert\message\NewLineInsertForm.resx">
+      <DependentUpon>NewLineInsertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="util\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="screen\control\BackgroundType.cs" />
+    <Compile Include="screen\control\BaseType.cs" />
+    <Compile Include="screen\control\ImageType.cs" />
+    <Compile Include="screen\IScreenControl.cs" />
+    <Compile Include="screen\ScreenControl.cs">
+    </Compile>
+    <Compile Include="screen\ScreenMakerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screen\ScreenMakerForm.Designer.cs">
+      <DependentUpon>ScreenMakerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screen\ScreenPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="screen\ScreenPropertyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screen\ScreenPropertyForm.Designer.cs">
+      <DependentUpon>ScreenPropertyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screen\ScreenToolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screen\ScreenToolForm.Designer.cs">
+      <DependentUpon>ScreenToolForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="search\BookmarkInfo.cs" />
+    <Compile Include="search\BookmarkListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="search\BookmarkListForm.Designer.cs">
+      <DependentUpon>BookmarkListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="search\Grep.cs" />
+    <Compile Include="search\GrepOptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="search\GrepOptionForm.Designer.cs">
+      <DependentUpon>GrepOptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="search\GrepOption.cs" />
+    <Compile Include="search\JumpOptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="search\JumpOptionForm.Designer.cs">
+      <DependentUpon>JumpOptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="search\ReplaceAllForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="search\ReplaceAllForm.Designer.cs">
+      <DependentUpon>ReplaceAllForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="search\ReplaceOptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="search\ReplaceOptionForm.Designer.cs">
+      <DependentUpon>ReplaceOptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="search\SearchOptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="search\SearchOptionForm.Designer.cs">
+      <DependentUpon>SearchOptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="search\EditorSearchOption.cs" />
+    <Compile Include="search\SearchResult.cs" />
+    <Compile Include="search\SearchResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="search\SearchResultForm.Designer.cs">
+      <DependentUpon>SearchResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taginsert\BaseInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taginsert\BaseInsertForm.Designer.cs">
+      <DependentUpon>BaseInsertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taginsert\ITagInsertAction.cs" />
+    <Compile Include="taginsert\message\ClearInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taginsert\message\ClearInsertForm.Designer.cs">
+      <DependentUpon>ClearInsertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taginsert\message\ClickWaitInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taginsert\message\ClickWaitInsertForm.Designer.cs">
+      <DependentUpon>ClickWaitInsertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taginsert\message\FontInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taginsert\message\FontInsertForm.Designer.cs">
+      <DependentUpon>FontInsertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="taginsert\message\NewLineInsertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taginsert\message\NewLineInsertForm.Designer.cs">
+      <DependentUpon>NewLineInsertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="util\DebugTimer.cs" />
+    <Compile Include="util\FileUtil.cs" />
+    <Compile Include="util\Msgbox.cs" />
+    <Compile Include="util\SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="util\SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="util\TextUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextEditor\ICSharpCode.TextEditor.csproj">
+      <Project>{2D18BE89-D210-49EB-A9DD-2246FBB3DF6D}</Project>
+      <Name>ICSharpCode.TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinFormsUI\WinFormsUI.csproj">
+      <Project>{D3C782BA-178E-4235-A3BA-8C11DEBB6BEE}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Critical.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="app.ico" />
+    <None Include="icon_32.png" />
+    <Content Include="Resources\app.ico" />
+    <None Include="Resources\Icons.16x16.ArrowDown.png" />
+    <None Include="Resources\Icons.16x16.BrowserCancel.png" />
+    <None Include="Resources\Icons.16x16.BrowserRefresh.png" />
+    <None Include="Resources\BringToFrontHS.png" />
+    <None Include="Resources\Icons.16x16.Property.png" />
+    <None Include="Resources\Critical1.bmp" />
+    <None Include="Resources\Icons.16x16.ResourceEditor.bmp" />
+    <None Include="Resources\Icons.16x16.CommentUnRegion.png" />
+    <None Include="Resources\msgtag.png" />
+    <None Include="Resources\search_up_b.ico" />
+    <None Include="Resources\search_down_b.ico" />
+    <None Include="Resources\book_open_y.ico" />
+    <None Include="Resources\book_open_r.ico" />
+    <None Include="Resources\book_open_b.ico" />
+    <None Include="Resources\Icons.16x16.HelpIcon.png" />
+    <None Include="Resources\Icons.16x16.Information.png" />
+    <None Include="Resources\Control_ActiveDocumentHost.png" />
+    <None Include="Resources\Icons.16x16.PrevWindowIcon.png" />
+    <None Include="Resources\Icons.16x16.NextWindowIcon.png" />
+    <None Include="Resources\Icons.16x16.SplitWindow.png" />
+    <None Include="Resources\OptionsHS.png" />
+    <None Include="Resources\file_base.png" />
+    <None Include="Resources\file_tjs.png" />
+    <None Include="Resources\file_kag.png" />
+    <None Include="Resources\Icons.16x16.CancelIcon.png" />
+    <None Include="Resources\Icons.16x16.Debug.Start.png" />
+    <None Include="Resources\Icons.16x16.NameSpace.png" />
+    <None Include="Resources\Bookmarks.ClearAll.png" />
+    <None Include="Resources\Bookmarks.GotoPrev.png" />
+    <None Include="Resources\Bookmarks.GotoNext.png" />
+    <None Include="Resources\Bookmarks.ToggleMark.png" />
+    <None Include="Resources\GoToNextHS1.png" />
+    <None Include="Resources\Icons.16x16.FindInFiles.png" />
+    <None Include="Resources\Icons.16x16.ReplaceIcon.png" />
+    <None Include="Resources\Icons.16x16.FindNextIcon.png" />
+    <None Include="Resources\HtmlHelp2.16x16.Search.png" />
+    <None Include="Resources\Icons.16x16.CommentRegion.png" />
+    <None Include="Resources\DeleteHS.png" />
+    <None Include="Resources\PasteHS.png" />
+    <None Include="Resources\CopyHS.png" />
+    <None Include="Resources\CutHS.png" />
+    <None Include="Resources\Edit_RedoHS.png" />
+    <None Include="Resources\Edit_UndoHS.png" />
+    <None Include="Resources\Icons.16x16.ClosedFolderBitmap.png" />
+    <None Include="Resources\Icons.16x16.SaveAllIcon.png" />
+    <None Include="Resources\Icons.16x16.SaveIcon.png" />
+    <None Include="Resources\Open.png" />
+    <None Include="Resources\openHS.png" />
+    <None Include="Resources\Open.bmp" />
+    <None Include="Resources\NewFolderHS.png" />
+    <None Include="Resources\NewDocumentHS.png" />
+    <None Include="Resources\RepeatHS.png" />
+    <None Include="Resources\StopHS.png" />
+    <None Include="Resources\PlayHS.png" />
+    <None Include="Resources\ImgViewBG.png" />
+    <None Include="Resources\Icons.16x16.CopyIcon.png" />
+    <None Include="Resources\reduce_b.ico" />
+    <None Include="Resources\magnify_b.ico" />
+    <None Include="Resources\imagewindow.ico" />
+    <None Include="Resources\imageauto.ico" />
+    <None Include="Resources\NavForward.png" />
+    <None Include="Resources\NavBack.png" />
+    <None Include="Resources\GoToPrevious.png" />
+    <None Include="Resources\GoToNextHS.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
